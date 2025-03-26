@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnostic Santé</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="logo.png" alt="Propharmal Spa logo" width="300" height="50">
+            </div>
+            <div class="language-switcher">
+                <button id="lang-toggle" class="lang-btn">
+                    <i class="fas fa-globe"></i>
+                    <span id="current-lang">FR</span>
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <section class="intro">
+                <h2>Outil d'aide au diagnostic</h2>
+                <p>Sélectionnez vos symptômes et informations pour recevoir une évaluation préliminaire. Cet outil ne remplace pas l'avis d'un professionnel de santé.</p>
+            </section>
+
+            <section class="diagnostic-tool">
+                <div class="steps">
+                    <div class="step active" data-step="symptoms">
+                        <div class="step-number">1</div>
+                        <div>Symptômes</div>
+                    </div>
+                    <div class="step" data-step="factors">
+                        <div class="step-number">2</div>
+                        <div>Facteurs</div>
+                    </div>
+                    <div class="step" data-step="quality">
+                        <div class="step-number">3</div>
+                        <div>Qualité de vie</div>
+                    </div>
+                    <div class="step" data-step="timing">
+                        <div class="step-number">4</div>
+                        <div>Durée</div>
+                    </div>
+                    <div class="step" data-step="results">
+                        <div class="step-number">5</div>
+                        <div>Résultats</div>
+                    </div>
+                </div>
+
+                <div class="panels">
+                    <div class="panel active" id="symptoms-panel">
+                        <h3>Vos symptômes</h3>
+                        <p>Sélectionnez tous les symptômes que vous présentez</p>
+                        
+                        <div class="options">
+                            <div class="option" data-value="Eternuement">
+                                <i class="fas fa-wind"></i>
+                                <span>Éternuement</span>
+                            </div>
+                            <div class="option" data-value="Rhinorrhée">
+                                <i class="fas fa-tint"></i>
+                                <span>Nez qui coule</span>
+                            </div>
+                            <div class="option" data-value="Prurit_nasal">
+                                <i class="fas fa-allergies"></i>
+                                <span>Nez qui gratte</span>
+                            </div>
+                            <div class="option" data-value="Obstruction_nasal">
+                                <i class="fas fa-head-side-mask"></i>
+                                <span>Nez bouché</span>
+                            </div>
+                            <div class="option" data-value="Prurit_oculaire">
+                                <i class="fas fa-eye"></i>
+                                <span>Yeux qui grattent</span>
+                            </div>
+                            <div class="option" data-value="Fièvre_Courbatures">
+                                <i class="fas fa-thermometer-three-quarters"></i>
+                                <span>Fièvre / Courbatures</span>
+                            </div>
+                            <div class="option" data-value="Démangeaisons">
+                                <i class="fas fa-hand-sparkles"></i>
+                                <span>Démangeaisons</span>
+                            </div>
+                        </div>
+                        
+                        <div class="navigation">
+                            <button class="next-btn" data-next="factors">Suivant</button>
+                        </div>
+                    </div>
+
+                    <div class="panel" id="factors-panel">
+                        <h3>Facteurs déclenchants</h3>
+                        <p>Y a-t-il des facteurs qui déclenchent ou aggravent vos symptômes?</p>
+                        
+                        <div class="options">
+                            <div class="option" data-value="Pollens">
+                                <i class="fas fa-seedling"></i>
+                                <span>Pollens</span>
+                            </div>
+                            <div class="option" data-value="Poussières">
+                                <i class="fas fa-broom"></i>
+                                <span>Poussières</span>
+                            </div>
+                            <div class="option" data-value="Animaux">
+                                <i class="fas fa-paw"></i>
+                                <span>Animaux</span>
+                            </div>
+                            <div class="option" data-value="Moisissures">
+                                <i class="fas fa-cloud-rain"></i>
+                                <span>Moisissures</span>
+                            </div>
+                            <div class="option" data-value="Froid">
+                                <i class="fas fa-snowflake"></i>
+                                <span>Froid</span>
+                            </div>
+                            <div class="option" data-value="Virus">
+                                <i class="fas fa-virus"></i>
+                                <span>Virus</span>
+                            </div>
+                            <div class="option" data-value="Aliments">
+                                <i class="fas fa-utensils"></i>
+                                <span>Aliments</span>
+                            </div>
+                            <div class="option" data-value="Médicaments">
+                                <i class="fas fa-pills"></i>
+                                <span>Médicaments</span>
+                            </div>
+                        </div>
+                        
+                        <div class="navigation">
+                            <button class="prev-btn" data-prev="symptoms">Précédent</button>
+                            <button class="next-btn" data-next="quality">Suivant</button>
+                        </div>
+                    </div>
+
+                    <div class="panel" id="quality-panel">
+                        <h3>Impact sur la qualité de vie</h3>
+                        <p>Comment vos symptômes affectent-ils votre quotidien?</p>
+                        
+                        <div class="options">
+                            <div class="option" data-value="Travail_scolaire">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Gêne au travail ou à l'école</span>
+                            </div>
+                            <div class="option" data-value="Domestique_loisirs">
+                                <i class="fas fa-home"></i>
+                                <span>Perturbation des activités domestiques ou de loisirs</span>
+                            </div>
+                            <div class="option" data-value="Sommeil">
+                                <i class="fas fa-bed"></i>
+                                <span>Troubles du sommeil</span>
+                            </div>
+                            <div class="option" data-value="Malaise_vomissements">
+                                <i class="fas fa-dizzy"></i>
+                                <span>Malaises ou vomissements</span>
+                            </div>
+                        </div>
+                        
+                        <div class="navigation">
+                            <button class="prev-btn" data-prev="factors">Précédent</button>
+                            <button class="next-btn" data-next="timing">Suivant</button>
+                        </div>
+                    </div>
+
+                    <div class="panel" id="timing-panel">
+                        <h3>Durée des symptômes</h3>
+                        <p>Depuis combien de temps présentez-vous ces symptômes?</p>
+                        
+                        <div class="options">
+                            <div class="option" data-value="less_1h_2h">
+                                <i class="fas fa-hourglass-start"></i>
+                                <span>Moins de 1-2 heures</span>
+                            </div>
+                            <div class="option" data-value="more_4h">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span>Plus de 4 heures</span>
+                            </div>
+                            <div class="option" data-value="less_eq_4w">
+                                <i class="fas fa-calendar-week"></i>
+                                <span>Moins ou égal à 4 semaines</span>
+                            </div>
+                            <div class="option" data-value="more_4w">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Plus de 4 semaines</span>
+                            </div>
+                        </div>
+                        
+                        <div class="navigation">
+                            <button class="prev-btn" data-prev="quality">Précédent</button>
+                            <button class="analyze-btn">Analyser</button>
+                        </div>
+                    </div>
+
+                    <div class="panel" id="results-panel">
+                        <h3>Résultats de l'analyse</h3>
+                        
+                        <div class="results-container">
+                            <div class="loader"></div>
+                            <div class="diagnosis-results"></div>
+                            <div class="category-results"></div>
+                        </div>
+                        
+                        <div class="results-disclaimer">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <p>Ce diagnostic est fourni à titre informatif uniquement et ne remplace pas l'avis d'un professionnel de la santé. Consultez un médecin pour un diagnostic précis et un traitement approprié.</p>
+                        </div>
+                        
+                        <div class="navigation">
+                            <button class="prev-btn" data-prev="timing">Précédent</button>
+                            <button class="restart-btn">Recommencer</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+
+            <div class="copyright">
+                &copy; 2025 Propharmal Spa. Tous droits réservés.
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+    <script src="translate.js"></script>
+</body>
+</html>
